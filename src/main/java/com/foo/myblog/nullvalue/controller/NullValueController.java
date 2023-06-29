@@ -17,7 +17,8 @@ import java.util.concurrent.ConcurrentHashMap;
 @RestController
 @Slf4j
 public class NullValueController {
-    @GetMapping("wrong")
+    //this is the wrong aproach
+    @GetMapping("/v1/nullvalue/wrong")
     public int wrong(@RequestParam(value = "test", defaultValue = "1111") String test) {
         return wrongMethod(test.charAt(0) == '1' ? null : new FooService(),
                 test.charAt(1) == '1' ? null : 1,
@@ -25,7 +26,8 @@ public class NullValueController {
                 test.charAt(3) == '1' ? null : "OK").size();
     }
 
-    @GetMapping("right")
+    //this is the right approach
+    @GetMapping("/v1/nullvalue/right")
     public int right(@RequestParam(value = "test", defaultValue = "1111") String test) {
         return Optional.ofNullable(rightMethod(test.charAt(0) == '1' ? null : new FooService(),
                 test.charAt(1) == '1' ? null : 1,

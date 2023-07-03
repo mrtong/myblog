@@ -7,7 +7,7 @@ import com.foo.myblog.nullvalue.pojonull.entity.User;
 import com.foo.myblog.nullvalue.pojonull.entity.UserDto;
 import com.foo.myblog.nullvalue.pojonull.entity.UserEntity;
 import com.foo.myblog.nullvalue.pojonull.repo.UserEntityRepository;
-import com.foo.myblog.nullvalue.pojonull.repo.UserRepository;
+import com.foo.myblog.nullvalue.pojonull.repo.PojoUserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,11 +22,13 @@ public class POJONullController {
 
     private UserEntityRepository userEntityRepository;
 
-    private UserRepository userRepository;
+    private PojoUserRepository pojoUserRepository;
 
-    public POJONullController(final UserEntityRepository userEntityRepository, final UserRepository userRepository) {
+    public POJONullController(
+            final UserEntityRepository userEntityRepository,
+            final PojoUserRepository pojoUserRepository) {
         this.userEntityRepository = userEntityRepository;
-        this.userRepository = userRepository;
+        this.pojoUserRepository = pojoUserRepository;
     }
 
     @GetMapping
@@ -43,7 +45,7 @@ public class POJONullController {
     @PostMapping("wrong")
     public User wrong(@RequestBody User user) {
         user.setNickname(String.format("guest%s", user.getName()));
-        return userRepository.save(user);
+        return pojoUserRepository.save(user);
     }
 
     @PostMapping("right")

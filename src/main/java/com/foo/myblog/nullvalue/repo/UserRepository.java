@@ -1,6 +1,6 @@
 package com.foo.myblog.nullvalue.repo;
 
-import com.foo.myblog.nullvalue.pojo.User;
+import com.foo.myblog.nullvalue.pojonull.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package com.foo.myblog.nullvalue.controller;
+package com.foo.myblog.nullvalue.avoidnullpointerexception.controller;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;

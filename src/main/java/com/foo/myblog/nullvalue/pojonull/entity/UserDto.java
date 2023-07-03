@@ -1,4 +1,4 @@
-package com.foo.myblog.nullvalue.pojonull;
+package com.foo.myblog.nullvalue.pojonull.entity;
 
 import lombok.Data;
 

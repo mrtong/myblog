@@ -1,23 +1,18 @@
-package com.foo.myblog.nullvalue.pojonull;
+package com.foo.myblog.nullvalue.dbnull.entity;
 
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-@Data
 @Entity
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
-    private String name;
-    private String nickname;
-    private Integer age;
-    private Date createDate = new Date();
+    private Long score;
 }
-

@@ -1,13 +1,13 @@
-package com.foo.myblog.nullvalue.controller;
+package com.foo.myblog.nullvalue.pojonull.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
-import com.foo.myblog.nullvalue.pojonull.User;
-import com.foo.myblog.nullvalue.pojonull.UserDto;
-import com.foo.myblog.nullvalue.pojonull.UserEntity;
-import com.foo.myblog.nullvalue.repo.UserEntityRepository;
-import com.foo.myblog.nullvalue.repo.UserRepository;
+import com.foo.myblog.nullvalue.pojonull.entity.User;
+import com.foo.myblog.nullvalue.pojonull.entity.UserDto;
+import com.foo.myblog.nullvalue.pojonull.entity.UserEntity;
+import com.foo.myblog.nullvalue.pojonull.repo.UserEntityRepository;
+import com.foo.myblog.nullvalue.pojonull.repo.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
